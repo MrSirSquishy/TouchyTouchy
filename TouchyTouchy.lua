@@ -23,7 +23,7 @@
 --! Author: Squishy
 --^ Discord tag: @mrsirsquishy
 
---* Version: 1.0.0
+--* Version: 1.0.1
 --? Liscense: MIT
 
 
@@ -48,8 +48,6 @@ TT.stopWhenTheseArePlaying = {
 
 TT.all = {}
 
-local squassets = require("SquAPI_modules.SquAssets")
-
 ---@param arm ModelPart The arm to apply the TT to.
 ---@param isRight? boolean Defaults to `nil`, set true if the arm is on the right side. Or provide a vector3 to set the raycast vector
 ---@param pos? Vector3 Defaults to `vec(0,0,0)`, the position of the arm in the model
@@ -60,6 +58,7 @@ local squassets = require("SquAPI_modules.SquAssets")
 ---@param maxAngleFront? number Defaults to `180`, the maximum angle the arm can rotate front.
 ---@param crouchShift? number Defaults to `vec(0, -1, 0)`, the amount the arm will shift when crouching.
 ---@param movementInfluence? number Defaults to `0.5`, how much the touch point will move with the player(higher values drag on walls more, lower values will stay behind more)
+---@param speedToTouchEntity? number Defaults to `0.1`, how fast the player should be moving before it starts checking for entities to touch
 function TT.new(arm, isRight, pos, armLength, ticksUntilTouch, armSpeed, maxAngleBack, maxAngleFront, crouchShift, movementInfluence, speedToTouchEntity)
     local self = {}
     self.arm = arm
