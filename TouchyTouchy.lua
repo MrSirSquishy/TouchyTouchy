@@ -23,7 +23,7 @@
 --! Author: Squishy
 --^ Discord tag: @mrsirsquishy
 
---* Version: 1.0.1
+--* Version: 1.0.2
 --? Liscense: MIT
 
 
@@ -62,8 +62,8 @@ TT.all = {}
 function TT.new(arm, isRight, pos, armLength, ticksUntilTouch, armSpeed, maxAngleBack, maxAngleFront, crouchShift, movementInfluence, speedToTouchEntity)
     local self = {}
     self.arm = arm
-    self.pos = pos/16 or vec(0,0,0)
-    self.armLength = armLength/16 or 0.625
+    self.pos = (pos or vec(0,0,0))/16
+    self.armLength = (armLength or 10)/16
     self.ticksUntilTouch = ticksUntilTouch or 2
     self.armSpeed = armSpeed or 0.2
     self.movementInfluence = movementInfluence or 0.5
